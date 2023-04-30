@@ -10,7 +10,7 @@ En la carpeta `/linkedlist` se encuentra una implementación de una lista enlaza
 - **_Remove:_** Busca un elemento en la lista y lo elimina
 - **_Search:_** Busca un elemento en la lista y me devuelve su posición
 - **_Get:_** Devuelve el elemento de la lista que se encuentra en una posición dada
-- **_Size:_** Devuelve la cantidad de elemento que tiene la lista
+- **_Size:_** Devuelve la cantidad de elementos que tiene la lista
 - **_String:_** Devuelve una cadena de caracteres que representa la lista (para usar con Print)
 1. Modificar la implementacion de lista enlazada simple para que Size sea O(1)
 2. Implementar en la carpeta `/slicelist`una lista usando slices en lugar de nodos enlazados, con las mismas operaciones que la lista enlazada. Analizar el orden de cada operación. 
