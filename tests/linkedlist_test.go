@@ -6,6 +6,8 @@ import (
 	"fmt"
 	"guia3/linkedlist"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestInsert(t *testing.T) {
@@ -55,4 +57,70 @@ func TestDelete(t *testing.T) {
 	if err != nil || v != 4 {
 		t.Error("Error en Remove")
 	}
+}
+
+func TestSize(t *testing.T) {
+	l := linkedlist.NewLinkedList[int]()
+
+	assert.Equal(t, 0, l.Size())
+
+	l.Append(3)
+
+	assert.Equal(t, 1, l.Size())
+
+	l.Append(234)
+	l.Append(0)
+
+	assert.Equal(t, 3, l.Size())
+
+	l.Remove(0)
+
+	assert.Equal(t, 2, l.Size())
+
+	l.Remove(234)
+
+	assert.Equal(t, 1, l.Size())
+
+	l.Remove(3)
+
+	assert.Equal(t, 0, l.Size())
+
+	//______________________________________________
+
+	l2 := linkedlist.NewLinkedList[int]()
+	l2.Prepend(23)
+
+	assert.Equal(t, 1, l2.Size())
+
+	l2.Prepend(233)
+	l2.Prepend(512)
+
+	assert.Equal(t, 3, l2.Size())
+
+	l2.Remove(000)
+
+	assert.Equal(t, 3, l2.Size())
+
+	l2.Remove(233)
+
+	assert.Equal(t, 2, l2.Size())
+
+	//______________________________________________
+
+	l3 := linkedlist.NewLinkedList[int]()
+
+	l3.InsertAt(-22, 0)
+
+	assert.Equal(t, 1, l3.Size())
+
+	l3.InsertAt(-22, 0)
+	l3.InsertAt(-22, 0)
+
+	assert.Equal(t, 3, l3.Size())
+
+	l3.Pop()
+	l3.Pop()
+
+	assert.Equal(t, 1, l3.Size())
+
 }
